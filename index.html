@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>World Population from 2000 to 2019</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="js/d3/d3.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <!-- Intro pop-up -->
+    <div id="intro-pop-up">
+      <div class="text-container">
+        <h1>Instructions:</h1>
+        <p>
+          On the following page, you will be presented with the total recorded
+          populations of 20 randomly selected countries from 2000 to 2019.
+          Please explore the data and think about the kinds of trends your data
+          presents. Specifically, try to notice how population changes over
+          time.
+        </p>
+        <p>
+          In this study, we shall evaluate the time spent on the coming
+          visualization and ask a few comprehension questions.
+        </p>
+        <p>
+          The data collected from this survey will remain anonymous. Thank you
+          for taking the time to participate in this study.
+        </p>
+      </div>
+      <div class="btn-container">
+        <button
+          onclick="setTimeout(myFunction, 60000), setTimer()"
+          class="btn btn-primary go-to-experiment"
+        >
+          Start
+        </button>
+      </div>
+    </div>
+
+    <!-- Experiment -->
+    <div id="experiment-page">
+      <div class="text-bar">
+        <div class="user-control">
+          <select
+            onchange="update()"
+            id="country-selected"
+            class="form-control"
+          >
+            <option value="Ukraine">Ukraine</option>
+            <option value="Japan">Japan</option>
+            <option value="Korea, Dem. People’s Rep.">
+              Korea, Dem. People’s Rep.
+            </option>
+            <option value="Germany">Germany</option>
+            <option value="Venezuela, RB">Venezuela, RB</option>
+            <option value="Italy">Italy</option>
+            <option value="Bangladesh">Bangladesh</option>
+            <option value="Romania">Romania</option>
+            <option value="Lithuania">Lithuania</option>
+            <option value="Philippines">Philippines</option>
+            <option value="United Kingdom">United Kingdom</option>
+            <option value="Portugal">Portugal</option>
+            <option value="Mexico">Mexico</option>
+            <option value="Greece">Greece</option>
+            <option value="Russian Federation">Russian Federation</option>
+            <option value="Poland">Poland</option>
+            <option value="Argentina">Argentina</option>
+            <option value="Australia">Australia</option>
+            <option value="Bulgaria">Bulgaria</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="numbervis">
+        <center><h4>Population Change from 2000 to 2019</h4></center>
+        <div class="numberPercentChange" class="view">
+          <svg class="numberPercentCahngesvg"></svg>
+        </div>
+      </div>
+      <div class="dashboard">
+        <div class="visualization">
+          <center><h4>Population from 2000 to 2019</h4></center>
+          <div class="world-pop-chart" class="view">
+            <svg class="worldsvg"></svg>
+          </div>
+        </div>
+
+        <div class="visualization">
+          <center><h4>Percent Change Over Year</h4></center>
+          <div class="percentChange" class="view">
+            <svg class="percentCahngesvg"></svg>
+          </div>
+        </div>
+      </div>
+      <p id="footer"><b>Data source:</b> World Bank</p>
+    </div>
+
+    <script
+      type="text/javascript"
+      src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"
+    ></script>
+
+    <script src="js/interactions.js"></script>
+    <script type="application/javascript" src="js/central.js"></script>
+    <script type="application/javascript" src="js/percentChange.js"></script>
+    <script type="application/javascript" src="js/numberVis.js"></script>
+    <script type="application/javascript" src="js/main.js"></script>
+  </body>
+</html>
